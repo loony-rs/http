@@ -1,0 +1,23 @@
+[package]
+name = "loony-test"
+version = "0.1.0"
+authors = ["Sankar boro <sankar.boro@yahoo.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mio = {version ="0.7", features= ["os-poll", "net"]}
+fxhash = "0.2.1"
+pin-project = "1.0.1"
+futures-util = "0.3.15"
+tokio = { version = "1.1.0", features = ["full"] }
+loony-service = { path = "../loony-service" }
+
+[dependencies.async-std]
+version = "1.7.0"
+features = ["attributes"]
+
+[[example]]
+name = "test"
+path = "src/test.rs"
